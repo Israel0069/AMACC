@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide For SHS AMACC - Kapampangan words and meaning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 1.8%;
+        }
+        
+        .header {
+            background-color: #FFA384;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+			color: white;
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-style: italic;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            background-color: #74BDCB;
+            color: #fff;
+            cursor: pointer;
+			border-radius: 6px;	
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @media screen and (min-width: 768px) {
+            button {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Guide For SHS AMACC</h1>
+        <p class="subtitle">"Kapampangan words and meaning"</p>
+    </div><br><br>
+    <button onclick="getDefinitionAndSpeak('hello')">Mayap a abak.</button>
+    <button onclick="getDefinitionAndSpeak('hi')">Mayap a gatpanapun.</button>
+    <button onclick="getDefinitionAndSpeak('ok')">Mayap a bengi.</button>
+    <button onclick="getDefinitionAndSpeak('fine')">Komusta ka?</button>
+    <button onclick="getDefinitionAndSpeak('goodbye')">panapaya mu ku.</button>
+
+    <script>
+        function getDefinitionAndSpeak(word) {
+            let meaning = '';
+
+            switch (word) {
+                case 'hello':
+                    meaning = 'Mayap a abak. Good morning';
+                    break;
+                case 'hi':
+                    meaning = 'Mayap a gatpanapun. Good afternoon';
+                    break;
+                case 'ok':
+                    meaning = 'Mayap a bengi. acceptable or agreeable';
+                    break;
+                case 'fine':
+                    meaning = 'Komusta ka? How are you';
+                    break;
+                case 'goodbye':
+                    meaning = 'panapaya mu ku. Excuse me';
+                    break;
+                default:
+                    meaning = 'meaning not available';
+                    break;
+            }
+
+            speak(meaning);
+            displayMeaning(meaning);
+        }
+
+        function speak(message) {
+            var speech = new SpeechSynthesisUtterance();
+            speech.text = message;
+            window.speechSynthesis.speak(speech);
+        }
+
+        function displayMeaning(meaning) {
+            alert(meaning); 
+        }
+    </script>
+</body>
+</html>
