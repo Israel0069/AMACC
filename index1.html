@@ -50,30 +50,32 @@
         <h1>Guide For SHS AMACC</h1>
         <p class="subtitle">"Kapampangan words and meaning"</p>
     </div><br><br>
-    <button onclick="getDefinitionAndSpeak('hello')">Mayap a abak.</button>
-    <button onclick="getDefinitionAndSpeak('hi')">Mayap a gatpanapun.</button>
-    <button onclick="getDefinitionAndSpeak('ok')">Mayap a bengi.</button>
-    <button onclick="getDefinitionAndSpeak('fine')">Komusta ka?</button>
-    <button onclick="getDefinitionAndSpeak('goodbye')">panapaya mu ku.</button>
+    <button onclick="getDefinitionAndSpeak('a')">Mayap a abak.</button>
+    <button onclick="getDefinitionAndSpeak('b')">Mayap a gatpanapun.</button>
+    <button onclick="getDefinitionAndSpeak('c')">Mayap a bengi.</button>
+    <button onclick="getDefinitionAndSpeak('d')">Komusta ka?</button>
+    <button onclick="getDefinitionAndSpeak('e')">panapaya mu ku.</button>
+<br>
+<a href="index.php" style="padding: 10px 20px; background-color: black; color: white; border-radius: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">back</a>
 
     <script>
         function getDefinitionAndSpeak(word) {
             let meaning = '';
 
             switch (word) {
-                case 'hello':
+                case 'a':
                     meaning = 'Mayap a abak. Good morning';
                     break;
-                case 'hi':
+                case 'b':
                     meaning = 'Mayap a gatpanapun. Good afternoon';
                     break;
-                case 'ok':
+                case 'c':
                     meaning = 'Mayap a bengi. acceptable or agreeable';
                     break;
-                case 'fine':
+                case 'd':
                     meaning = 'Komusta ka? How are you';
                     break;
-                case 'goodbye':
+                case 'e':
                     meaning = 'panapaya mu ku. Excuse me';
                     break;
                 default:
