@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide For SHS AMACC - Ilocano words and meaning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 1.8%;
+        }
+        
+        .header {
+            background-color: #FFA384;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+			color: white;
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-style: italic;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            background-color: #74BDCB;
+            color: #fff;
+            cursor: pointer;
+			border-radius: 6px;	
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @media screen and (min-width: 768px) {
+            button {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Guide For SHS AMACC</h1>
+        <p class="subtitle">"Ilocano words and meaning"</p>
+    </div><br><br>
+    <button onclick="getDefinitionAndSpeak('a')">Naimbag a bigat.</button>
+    <button onclick="getDefinitionAndSpeak('b')">Naimbag a malem.</button>
+    <button onclick="getDefinitionAndSpeak('c')">Naimbag a rabii.</button>
+    <button onclick="getDefinitionAndSpeak('d')">Kumusta ka?</button>
+    <button onclick="getDefinitionAndSpeak('e')">Agyamanak.</button>
+<br>
+<a href="index.php" style="padding: 10px 20px; background-color: black; color: white; border-radius: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">back</a>
+    <script>
+        function getDefinitionAndSpeak(word) {
+            let meaning = '';
+
+            switch (word) {
+                case 'a':
+                    meaning = 'Naimbag a bigat. Good morning';
+                    break;
+                case 'b':
+                    meaning = 'Naimbag a malem. Good afternoon';
+                    break;
+                case 'c':
+                    meaning = 'Naimbag a rabii. Good evening';
+                    break;
+                case 'd':
+                    meaning = 'Kumusta ka? How are you';
+                    break;
+                case 'e':
+                    meaning = 'Agyamanak. Thank you';
+                    break;
+                default:
+                    meaning = 'meaning not available';
+                    break;
+            }
+
+            speak(meaning);
+            displayMeaning(meaning);
+        }
+
+        function speak(message) {
+            var speech = new SpeechSynthesisUtterance();
+            speech.text = message;
+            window.speechSynthesis.speak(speech);
+        }
+
+        function displayMeaning(meaning) {
+            alert(meaning); 
+        }
+    </script>
+</body>
+</html>
