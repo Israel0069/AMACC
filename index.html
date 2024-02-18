@@ -19,9 +19,10 @@
 
         h1, p {
             text-align: center;
+            color: #74BDCB;
         }
 
-        button {
+        select {
             padding: 10px 20px;
             font-size: 18px;
             background-color: #FFA384;
@@ -33,19 +34,30 @@
         }
 
         @media screen and (max-width: 768px) {
-            button {
+            select {
                 font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <h1 style="color:#74BDCB;">Welcome to My System</h1>
-    <p style="color:#333;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-down-fill" viewBox="0 0 16 16">
-  <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0"/>
-</svg> loading... Click the button below to continue.</p>
-    <form action="index1.html">
-        <button type="submit">Continue</button>
+    <h1>Welcome to My System</h1>
+    <p>loading... Select language:</p>
+    <form>
+        <select id="languageSelector" onchange="navigate()">
+            <option value="">Select Language</option>
+            <option value="index1.html">Kapampangan</option>
+            <option value="index2.html">Ilocano</option>
+        </select>
     </form>
+
+    <script>
+        function navigate() {
+            var selectedValue = document.getElementById("languageSelector").value;
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            }
+        }
+    </script>
 </body>
 </html>
